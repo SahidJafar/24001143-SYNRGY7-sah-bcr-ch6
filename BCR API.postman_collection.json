@@ -1,0 +1,2741 @@
+{
+	"info": {
+		"_postman_id": "6288a16e-4f91-4995-91eb-f68457b39123",
+		"name": "BCR API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "19992489"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"superadmin1@gmail.com\",\r\n    \"password\":\"superadmin1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Login(superadmin)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"superadmin1@gmail.com\",\r\n    \"password\":\"superadmin1\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "749"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2ed-WC5PwCySbk4x6RiOJDoIrfhSbJw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 07:35:59 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"e8e3a44d-8cd3-45fb-a405-1f2dac89f098\",\n            \"name\": \"Super Admin 1\",\n            \"email\": \"superadmin1@gmail.com\",\n            \"role\": \"superadmin\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzU3NjU1OX0.3h1UcoeW1MP1IqF68nqOcBYAaVV9ZInc3IBfQHiUTBs\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzY1OTM1OX0.bkq05k5c-DUpKtvAHsy_dp7CuPMjuQtSXC_gPkfPRDE\"\n    }\n}"
+						},
+						{
+							"name": "Login(admin)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"admin1@gmail.com\",\r\n    \"password\":\"admin1password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "703"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2bf-Ps2xFqsRCTN8ovqQzoSTLVDBkOk\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 07:36:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\",\n            \"role\": \"admin\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTczMDA3LCJleHAiOjE3MTc1NzY2MDd9.wrT5TWfwGPmXjPWasogFJE4ECyEEFvtLW9PbDIY9d2s\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTczMDA3LCJleHAiOjE3MTc2NTk0MDd9.Q4_7gbtxczAFatDqhGh1-aWM03Hs2_I-ZrOj5AUpt1k\"\n    }\n}"
+						},
+						{
+							"name": "Login(member)",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"email\":\"member1@gmail.com\",\r\n    \"password\":\"member1password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/login",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "712"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"2c8-obYdQQ7aYbvN4AM1+QqODx9r6EY\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 07:37:26 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Login successfully\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"cd7c5965-aeaf-4753-8a4c-6b0554064e53\",\n            \"name\": \"Member 1\",\n            \"email\": \"member1@gmail.com\",\n            \"role\": \"member\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkN2M1OTY1LWFlYWYtNDc1My04YTRjLTZiMDU1NDA2NGU1MyIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwNDYsImV4cCI6MTcxNzU3NjY0Nn0.UVIJXawbgaGQrCy4DDlcFaqsghrdiWZ73EztiVgIMCo\",\n        \"refresh_token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkN2M1OTY1LWFlYWYtNDc1My04YTRjLTZiMDU1NDA2NGU1MyIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwNDYsImV4cCI6MTcxNzY1OTQ0Nn0.B1qw_BBEzQ4HsEGAKgrqKSxLUDb2-QyKS0xII2SqsrU\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Refresh Token",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzY1OTM1OX0.bkq05k5c-DUpKtvAHsy_dp7CuPMjuQtSXC_gPkfPRDE\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/refresh-token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"refresh-token"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Refresh Token",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"refreshToken\":\"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzY1OTM1OX0.bkq05k5c-DUpKtvAHsy_dp7CuPMjuQtSXC_gPkfPRDE\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/refresh-token",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"refresh-token"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "360"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"168-nccGlv5+jeNEzaxgKbXqraAu7CM\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 07:38:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Token updated successfully\",\n    \"data\": {\n        \"token\": {\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwOTAsImV4cCI6MTcxNzU3NjY5MH0.ZFuq2K7slqPFq69tAyl4kRUM9y61QXOFk_eEHwPafas\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "Logout",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMyNDMsImV4cCI6MTcxNzU3Njg0M30.pjuKuRDdfRVCXsVE-J8eU30oPE3q45IL40oegmEwKE8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"logout"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Logout",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									},
+									{
+										"key": "Content-Type",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/logout",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"logout"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "75"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b-eCWHxhPl9LUDnk/tpoe8PTkQCog\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 07:47:05 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Logout successfully\",\n    \"data\": null\n}"
+						}
+					]
+				},
+				{
+					"name": "whoAmI",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzM2NDksImV4cCI6MTcxNzU3NzI0OX0.7AxN0ymL0QmzsulIpoldzKpjtN283ooRFe4-n0GY5qc",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/me",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "whoAmI",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/me",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "648"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"288-bkbu9kM0hrjyNphQRtva7uiIfAo\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 05:33:18 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Berhasil mendapatkan data user\",\n    \"data\": {\n        \"id\": \"30c11aae-49b1-4719-9631-b31ef8d33251\",\n        \"role\": \"superadmin\",\n        \"name\": \"Super Admin 1\",\n        \"email\": \"superadmin1@gmail.com\",\n        \"password\": \"$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72\",\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTI1MTUsImV4cCI6MTcxNzM5NjExNX0.9Ua8O_VLg1P9_tZkLMR_Teq4NG4QronaD8Sz5PzFsg4\",\n        \"refresh_token\": null,\n        \"created_at\": \"2024-06-03T05:00:50.423Z\",\n        \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Super Admin",
+			"item": [
+				{
+					"name": "GetListUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0MDg2MTQsImV4cCI6MTcxNzQxMjIxNH0.JbSgscpPbZ229n-YDEmtSrTDWyyAYMtTXj9I_Q2XqFo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetListUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7666"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1df2-uS/67nms+V2VhDnvhoaWxTAWgqQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 09:57:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User data found\",\n    \"data\": [\n        {\n            \"id\": \"b989ca9f-3821-4e3f-a7dc-52166096da09\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 2\",\n            \"email\": \"superadmin2@gmail.com\",\n            \"password\": \"$2b$10$44NHwLXWr0ZqFaz0gnXGKu.D6jp3HHfiVLYbIcyfl5zXSI0pWWj8a\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"702f2b9d-fe8d-46a1-aeba-c2aa889688d1\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 3\",\n            \"email\": \"superadmin3@gmail.com\",\n            \"password\": \"$2b$10$9IB7V8jGd2vnNDiP0Zrc4.k6O9SAk89JSEVrLrn3gW/AeYBgBPGGu\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"ec100a0c-8942-4c98-a5bd-eddbc4eaac48\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 4\",\n            \"email\": \"superadmin4@gmail.com\",\n            \"password\": \"$2b$10$9ruEQdrSxhk8iIe83uqdWOBJq4MYRYPWUGjw26dermuQ2Lrc4gI.e\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"1b42759a-f39a-4a80-a5f0-3300091bd9dd\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 5\",\n            \"email\": \"superadmin5@gmail.com\",\n            \"password\": \"$2b$10$3sgvPkLZ0RpKrGkGyozhiO6keroHBCA7sbz75SVlJnLGSzhxj6kD.\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"21b88d34-20ac-43ca-895c-eb8e2c1067d3\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 2\",\n            \"email\": \"admin2@gmail.com\",\n            \"password\": \"$2b$10$jCCfW1klI4jgGzP2Le7xaucrKrnV0bN9lyCfb.zblmqmlyI.BI9d6\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"f4299f29-8081-4d84-ba3f-06b8a91cc3bc\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 3\",\n            \"email\": \"admin3@gmail.com\",\n            \"password\": \"$2b$10$j7KDkFR/3.LWm2/UW3B9F.su4nE..z7C/Y36mJCDqElQoG8m9pnl2\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"97c8f941-915b-4e92-b78a-61fc2ae262a5\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 4\",\n            \"email\": \"admin4@gmail.com\",\n            \"password\": \"$2b$10$i/RU2bPYw2eCyI3RasyxQuw2q3z0DN2C7V2jo9RGDVUGZQOIRR1Z6\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"79a4ccd8-81a4-4510-953d-1f0f94fcd72c\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 5\",\n            \"email\": \"admin5@gmail.com\",\n            \"password\": \"$2b$10$MTy08V8WPIVNC4BaA7i1gue7qa4aRQnf/ZRI8b31R/.t42B4ZgOYO\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6d32bf31-3074-42a5-bd69-b2ef29f14383\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 6\",\n            \"email\": \"admin6@gmail.com\",\n            \"password\": \"$2b$10$uyUCAQsiIbt/vn.qTAd1XuUbFkxRdOpJMCme.ETYpxvuUKXNMTToK\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"3ef99117-81af-4a2b-a214-29273cfb928e\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 7\",\n            \"email\": \"admin7@gmail.com\",\n            \"password\": \"$2b$10$7cD7pFHNvcn0cXjOwCeZ3.BlUS4u2OqC80wVXZZByG1W6/3WKDVUK\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"d4ad3ebe-1601-4050-a61b-f9aeefee9fc0\",\n            \"role\": \"member\",\n            \"name\": \"Member 2\",\n            \"email\": \"member2@gmail.com\",\n            \"password\": \"$2b$10$DRbkNvXcxp6izajMDcOV1e7AYrZsCDL8X1JuiNVC24gekuvi3QfaG\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"54014218-4d59-4818-bb18-3af63b4e2892\",\n            \"role\": \"member\",\n            \"name\": \"Member 3\",\n            \"email\": \"member3@gmail.com\",\n            \"password\": \"$2b$10$z54cuc5C2WQG0gFC8y974.Qdd7Ra.LDuSUl6zzU6ECtw4Y.KRQCua\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"2e15751a-fefc-44a4-b996-a518cece1bab\",\n            \"role\": \"member\",\n            \"name\": \"Member 4\",\n            \"email\": \"member4@gmail.com\",\n            \"password\": \"$2b$10$R9yfeqBB.JEhzMb4O8nNiOkiMKl/AOMzEIP5BE3Aa0yQcZzI7aWzO\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"5d95f091-2756-4619-909d-fda5625f677b\",\n            \"role\": \"member\",\n            \"name\": \"Member 5\",\n            \"email\": \"member5@gmail.com\",\n            \"password\": \"$2b$10$Y8xwp5FVIzcLYEsMG/pEs.DCEUGw0kzPwssIOXPakuHfeOaHHULSS\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6afeffd4-549f-4192-a3ff-30129524cc05\",\n            \"role\": \"member\",\n            \"name\": \"Member 6\",\n            \"email\": \"member6@gmail.com\",\n            \"password\": \"$2b$10$49mSMO7haj2UfEG/.Gwbd.J6vWYIwyAg99dyYgUQny.3rBSblWA9S\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"66871a03-b135-498d-8cd4-c991f22ff580\",\n            \"role\": \"member\",\n            \"name\": \"Member 7\",\n            \"email\": \"member7@gmail.com\",\n            \"password\": \"$2b$10$oC7UvpQ2939z4XN9vZaiA.7KvsUAy6TRaQBK.A7SyU3mORtqjV91K\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"97f51d5c-f3b8-445e-b5b1-e058f2a1b937\",\n            \"role\": \"member\",\n            \"name\": \"Member 8\",\n            \"email\": \"member8@gmail.com\",\n            \"password\": \"$2b$10$WY9NYG5FisnG/.5Ho6xDVuPw1mXru..0miA350yALARF/xpxKFC/K\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"0d8d63c4-2cfa-496d-bfa6-0bca2d06c179\",\n            \"role\": \"member\",\n            \"name\": \"Member 9\",\n            \"email\": \"member9@gmail.com\",\n            \"password\": \"$2b$10$9KWQKVXPBHiPgonbBkLHduXBWRi1cz1NY8Udvq1DUawYbyUf5iAbu\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"5d5d348f-42f1-440b-8fb5-03c19f1dbaee\",\n            \"role\": \"member\",\n            \"name\": \"Member 10\",\n            \"email\": \"member10@gmail.com\",\n            \"password\": \"$2b$10$MWmiyxbBRMTzwalya8Bh1.WTxYqC3WhAnWZ2sw0iYU5yIZZ5ILkje\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6cff09e6-e02f-4c13-84ee-16ea9b1f1874\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 8\",\n            \"email\": \"admin8@gmail.com\",\n            \"password\": \"$2b$10$TDW.Kyqcl9RvRLnA1FiLOek.t1crCjpuyXBXWBGQwX7qmKbu56HzC\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T07:44:55.058Z\",\n            \"updated_at\": \"2024-06-03T07:44:55.058Z\"\n        },\n        {\n            \"id\": \"35a8d92b-2cb2-407b-9500-77a73373cf5b\",\n            \"role\": \"member\",\n            \"name\": \"Member 1\",\n            \"email\": \"member1@gmail.com\",\n            \"password\": \"$2b$10$mVH3ZoZNo.ZUGPyeYJCk.ORSlgP2aDyuk/4VtS0Wh8ZClACfgtygO\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1YThkOTJiLTJjYjItNDA3Yi05NTAwLTc3YTczMzczY2Y1YiIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTIwOTEsImV4cCI6MTcxNzM5NTY5MX0.ApSkPulPfJqC-qLNdVjy9rqFoC5FLUQlDJfYsq97K6U\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"a8a54f69-1bfa-43d5-b757-acf3e286afd9\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\",\n            \"password\": \"$2b$10$pYH3T3DYHnrCJ6/wbhaoOO7VFCGveQw1VkNmZZpAoZjb3mmsxKSL.\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4YTU0ZjY5LTFiZmEtNDNkNS1iNzU3LWFjZjNlMjg2YWZkOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NDA4MjM4LCJleHAiOjE3MTc0MTE4Mzh9.XnUJ27_g9hN_MJzhvKaz-e1j7ZvFh0Q8fJXJgv3PJ7k\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"30c11aae-49b1-4719-9631-b31ef8d33251\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 1\",\n            \"email\": \"superadmin1@gmail.com\",\n            \"password\": \"$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0MDg2MTQsImV4cCI6MTcxNzQxMjIxNH0.JbSgscpPbZ229n-YDEmtSrTDWyyAYMtTXj9I_Q2XqFo\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "Register Admin",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0MDA2ODIsImV4cCI6MTcxNzQwNDI4Mn0.c7ckpHQPbE2qZUerkP7PDpc63xw10Xk3lCy9VDxevYg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Admin 9\",\r\n    \"email\":\"admin9@gmail.com\",\r\n    \"password\":\"admin9password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Admin",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Admin 8\",\r\n    \"email\":\"admin8@gmail.com\",\r\n    \"password\":\"admin8password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "369"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"171-huRvFKHl1tsDAw/FMPhVECn7fzE\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 07:44:55 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Data created successfully\",\n    \"data\": {\n        \"name\": \"Admin 8\",\n        \"email\": \"admin8@gmail.com\",\n        \"password\": \"$2b$10$TDW.Kyqcl9RvRLnA1FiLOek.t1crCjpuyXBXWBGQwX7qmKbu56HzC\",\n        \"id\": \"6cff09e6-e02f-4c13-84ee-16ea9b1f1874\",\n        \"role\": \"admin\",\n        \"token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2024-06-03T07:44:55.058Z\",\n        \"updated_at\": \"2024-06-03T07:44:55.058Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetListCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetListCar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3363"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"d23-d4fBkq2HFhu+PMjZ7B+jBJJYEZ4\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:19:02 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data found\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577506/cars/eu5qi9cv24uxjj6iar3d.png\",\n            \"image_public_id\": \"cars/eu5qi9cv24uxjj6iar3d\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"[\\n      \\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\\n    ]\",\n            \"specs\": \"[\\n      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\\n      \\\"Locking glove box\\\",\\n      \\\"Pwr front vented disc/rear drum brakes\\\"\\n    ]\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"created_at\": \"2024-06-05T08:51:46.820Z\",\n            \"updated_at\": \"2024-06-05T08:51:46.820Z\",\n            \"deleted_at\": \"2024-06-05T08:51:38.690Z\",\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userUpdated\": null,\n            \"userDeleted\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png\",\n            \"image_public_id\": \"cars/ktkpgaflnnwpawmeukrc\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"\\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\",\n            \"specs\": \"      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:59:16.037Z\",\n            \"updated_at\": \"2024-06-05T08:59:16.037Z\",\n            \"deleted_at\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userUpdated\": null,\n            \"userDeleted\": null\n        },\n        {\n            \"id\": 2,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png\",\n            \"image_public_id\": \"cars/zf3nbkkhiqae7fskdp24\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2020,\n            \"options\": \"\\\"Keyless Entry\\\",\\\"Power Windows\\\",\\\"MP3 (Single Disc)\\\",\\n\\\"CD (Multi Disc)\\\",\\\"Navigation\\\"\",\n            \"specs\": \"\\\"Rear passenger map pockets\\\",\\\"Electrochromic rearview mirror\\\",\\\"Dual chrome exhaust tips\\\"\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:57:58.411Z\",\n            \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n            \"deleted_at\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userUpdated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userDeleted\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCarById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCarById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"454-p7ZFqOIV2WeUHm5jBr+swUkFzto\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:14:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data found\",\n    \"data\": {\n        \"id\": 2,\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png\",\n        \"image_public_id\": \"cars/zf3nbkkhiqae7fskdp24\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2020,\n        \"options\": \"\\\"Keyless Entry\\\",\\\"Power Windows\\\",\\\"MP3 (Single Disc)\\\",\\n\\\"CD (Multi Disc)\\\",\\\"Navigation\\\"\",\n        \"specs\": \"\\\"Rear passenger map pockets\\\",\\\"Electrochromic rearview mirror\\\",\\\"Dual chrome exhaust tips\\\"\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"updated_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:57:58.411Z\",\n        \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n        \"deleted_at\": null,\n        \"userDeleted\": null,\n        \"userCreated\": {\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\"\n        },\n        \"userUpdated\": {\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "plate",
+									"value": "D-2345UYD",
+									"type": "text"
+								},
+								{
+									"key": "manufacture",
+									"value": "Toyota",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "G",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/avanza.png"
+								},
+								{
+									"key": "rent_per_day",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+									"type": "text"
+								},
+								{
+									"key": "available_at",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "transmission",
+									"value": "manual",
+									"description": "enum(\"manual\", \"automatic)",
+									"type": "text"
+								},
+								{
+									"key": "available",
+									"value": "true",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "MVP",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "options",
+									"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+									"type": "text"
+								},
+								{
+									"key": "specs",
+									"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateDataCar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "plate",
+											"value": "D-2345UYD",
+											"type": "text"
+										},
+										{
+											"key": "manufacture",
+											"value": "Toyota",
+											"type": "text"
+										},
+										{
+											"key": "model",
+											"value": "G",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/avanza.png"
+										},
+										{
+											"key": "rent_per_day",
+											"value": "150000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+											"type": "text"
+										},
+										{
+											"key": "available_at",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "transmission",
+											"value": "manual",
+											"description": "enum(\"manual\", \"automatic)",
+											"type": "text"
+										},
+										{
+											"key": "available",
+											"value": "true",
+											"description": "boolean",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "MVP",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2019",
+											"type": "text"
+										},
+										{
+											"key": "options",
+											"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+											"type": "text"
+										},
+										{
+											"key": "specs",
+											"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1003"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3eb-OXhFSzRDcxe/HZL6LX2hp6CSPRE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:59:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Data created successfully\",\n    \"data\": {\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2019,\n        \"options\": \"\\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\",\n        \"specs\": \"      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\",\n        \"image_public_id\": \"cars/ktkpgaflnnwpawmeukrc\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"id\": 3,\n        \"updated_by\": null,\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:59:16.037Z\",\n        \"updated_at\": \"2024-06-05T08:59:16.037Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "plate",
+									"value": "D-2345UYD",
+									"type": "text"
+								},
+								{
+									"key": "manufacture",
+									"value": "Toyota",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "G",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/avanza.png"
+								},
+								{
+									"key": "rent_per_day",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+									"type": "text"
+								},
+								{
+									"key": "available_at",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "transmission",
+									"value": "manual",
+									"description": "enum(\"manual\", \"automatic)",
+									"type": "text"
+								},
+								{
+									"key": "available",
+									"value": "true",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "MVP",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2020",
+									"type": "text"
+								},
+								{
+									"key": "options",
+									"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+									"type": "text"
+								},
+								{
+									"key": "specs",
+									"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateDataCar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "plate",
+											"value": "D-2345UYD",
+											"type": "text"
+										},
+										{
+											"key": "manufacture",
+											"value": "Toyota",
+											"type": "text"
+										},
+										{
+											"key": "model",
+											"value": "G",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/avanza.png"
+										},
+										{
+											"key": "rent_per_day",
+											"value": "150000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+											"type": "text"
+										},
+										{
+											"key": "available_at",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "transmission",
+											"value": "manual",
+											"description": "enum(\"manual\", \"automatic)",
+											"type": "text"
+										},
+										{
+											"key": "available",
+											"value": "true",
+											"description": "boolean",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "MVP",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2020",
+											"type": "text"
+										},
+										{
+											"key": "options",
+											"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+											"type": "text"
+										},
+										{
+											"key": "specs",
+											"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "984"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d8-ECnNbsOdlqroFi9Y3aJMRJYnLtw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:12:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png\",\n        \"image_public_id\": \"cars/zf3nbkkhiqae7fskdp24\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2020,\n        \"options\": \"\\\"Keyless Entry\\\",\\\"Power Windows\\\",\\\"MP3 (Single Disc)\\\",\\n\\\"CD (Multi Disc)\\\",\\\"Navigation\\\"\",\n        \"specs\": \"\\\"Rear passenger map pockets\\\",\\\"Electrochromic rearview mirror\\\",\\\"Dual chrome exhaust tips\\\"\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"updated_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:57:58.411Z\",\n        \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteDataCar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-SFQCmMuTSLBDwK3PgfKovsRnnWU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:54:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "GetListUser",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4YTU0ZjY5LTFiZmEtNDNkNS1iNzU3LWFjZjNlMjg2YWZkOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NDA4MjM4LCJleHAiOjE3MTc0MTE4Mzh9.XnUJ27_g9hN_MJzhvKaz-e1j7ZvFh0Q8fJXJgv3PJ7k",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetListUser",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "7666"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1df2-uS/67nms+V2VhDnvhoaWxTAWgqQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 09:57:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"User data found\",\n    \"data\": [\n        {\n            \"id\": \"b989ca9f-3821-4e3f-a7dc-52166096da09\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 2\",\n            \"email\": \"superadmin2@gmail.com\",\n            \"password\": \"$2b$10$44NHwLXWr0ZqFaz0gnXGKu.D6jp3HHfiVLYbIcyfl5zXSI0pWWj8a\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"702f2b9d-fe8d-46a1-aeba-c2aa889688d1\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 3\",\n            \"email\": \"superadmin3@gmail.com\",\n            \"password\": \"$2b$10$9IB7V8jGd2vnNDiP0Zrc4.k6O9SAk89JSEVrLrn3gW/AeYBgBPGGu\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"ec100a0c-8942-4c98-a5bd-eddbc4eaac48\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 4\",\n            \"email\": \"superadmin4@gmail.com\",\n            \"password\": \"$2b$10$9ruEQdrSxhk8iIe83uqdWOBJq4MYRYPWUGjw26dermuQ2Lrc4gI.e\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"1b42759a-f39a-4a80-a5f0-3300091bd9dd\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 5\",\n            \"email\": \"superadmin5@gmail.com\",\n            \"password\": \"$2b$10$3sgvPkLZ0RpKrGkGyozhiO6keroHBCA7sbz75SVlJnLGSzhxj6kD.\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"21b88d34-20ac-43ca-895c-eb8e2c1067d3\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 2\",\n            \"email\": \"admin2@gmail.com\",\n            \"password\": \"$2b$10$jCCfW1klI4jgGzP2Le7xaucrKrnV0bN9lyCfb.zblmqmlyI.BI9d6\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"f4299f29-8081-4d84-ba3f-06b8a91cc3bc\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 3\",\n            \"email\": \"admin3@gmail.com\",\n            \"password\": \"$2b$10$j7KDkFR/3.LWm2/UW3B9F.su4nE..z7C/Y36mJCDqElQoG8m9pnl2\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"97c8f941-915b-4e92-b78a-61fc2ae262a5\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 4\",\n            \"email\": \"admin4@gmail.com\",\n            \"password\": \"$2b$10$i/RU2bPYw2eCyI3RasyxQuw2q3z0DN2C7V2jo9RGDVUGZQOIRR1Z6\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"79a4ccd8-81a4-4510-953d-1f0f94fcd72c\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 5\",\n            \"email\": \"admin5@gmail.com\",\n            \"password\": \"$2b$10$MTy08V8WPIVNC4BaA7i1gue7qa4aRQnf/ZRI8b31R/.t42B4ZgOYO\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6d32bf31-3074-42a5-bd69-b2ef29f14383\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 6\",\n            \"email\": \"admin6@gmail.com\",\n            \"password\": \"$2b$10$uyUCAQsiIbt/vn.qTAd1XuUbFkxRdOpJMCme.ETYpxvuUKXNMTToK\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"3ef99117-81af-4a2b-a214-29273cfb928e\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 7\",\n            \"email\": \"admin7@gmail.com\",\n            \"password\": \"$2b$10$7cD7pFHNvcn0cXjOwCeZ3.BlUS4u2OqC80wVXZZByG1W6/3WKDVUK\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"d4ad3ebe-1601-4050-a61b-f9aeefee9fc0\",\n            \"role\": \"member\",\n            \"name\": \"Member 2\",\n            \"email\": \"member2@gmail.com\",\n            \"password\": \"$2b$10$DRbkNvXcxp6izajMDcOV1e7AYrZsCDL8X1JuiNVC24gekuvi3QfaG\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"54014218-4d59-4818-bb18-3af63b4e2892\",\n            \"role\": \"member\",\n            \"name\": \"Member 3\",\n            \"email\": \"member3@gmail.com\",\n            \"password\": \"$2b$10$z54cuc5C2WQG0gFC8y974.Qdd7Ra.LDuSUl6zzU6ECtw4Y.KRQCua\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"2e15751a-fefc-44a4-b996-a518cece1bab\",\n            \"role\": \"member\",\n            \"name\": \"Member 4\",\n            \"email\": \"member4@gmail.com\",\n            \"password\": \"$2b$10$R9yfeqBB.JEhzMb4O8nNiOkiMKl/AOMzEIP5BE3Aa0yQcZzI7aWzO\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"5d95f091-2756-4619-909d-fda5625f677b\",\n            \"role\": \"member\",\n            \"name\": \"Member 5\",\n            \"email\": \"member5@gmail.com\",\n            \"password\": \"$2b$10$Y8xwp5FVIzcLYEsMG/pEs.DCEUGw0kzPwssIOXPakuHfeOaHHULSS\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6afeffd4-549f-4192-a3ff-30129524cc05\",\n            \"role\": \"member\",\n            \"name\": \"Member 6\",\n            \"email\": \"member6@gmail.com\",\n            \"password\": \"$2b$10$49mSMO7haj2UfEG/.Gwbd.J6vWYIwyAg99dyYgUQny.3rBSblWA9S\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"66871a03-b135-498d-8cd4-c991f22ff580\",\n            \"role\": \"member\",\n            \"name\": \"Member 7\",\n            \"email\": \"member7@gmail.com\",\n            \"password\": \"$2b$10$oC7UvpQ2939z4XN9vZaiA.7KvsUAy6TRaQBK.A7SyU3mORtqjV91K\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"97f51d5c-f3b8-445e-b5b1-e058f2a1b937\",\n            \"role\": \"member\",\n            \"name\": \"Member 8\",\n            \"email\": \"member8@gmail.com\",\n            \"password\": \"$2b$10$WY9NYG5FisnG/.5Ho6xDVuPw1mXru..0miA350yALARF/xpxKFC/K\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"0d8d63c4-2cfa-496d-bfa6-0bca2d06c179\",\n            \"role\": \"member\",\n            \"name\": \"Member 9\",\n            \"email\": \"member9@gmail.com\",\n            \"password\": \"$2b$10$9KWQKVXPBHiPgonbBkLHduXBWRi1cz1NY8Udvq1DUawYbyUf5iAbu\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"5d5d348f-42f1-440b-8fb5-03c19f1dbaee\",\n            \"role\": \"member\",\n            \"name\": \"Member 10\",\n            \"email\": \"member10@gmail.com\",\n            \"password\": \"$2b$10$MWmiyxbBRMTzwalya8Bh1.WTxYqC3WhAnWZ2sw0iYU5yIZZ5ILkje\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"6cff09e6-e02f-4c13-84ee-16ea9b1f1874\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 8\",\n            \"email\": \"admin8@gmail.com\",\n            \"password\": \"$2b$10$TDW.Kyqcl9RvRLnA1FiLOek.t1crCjpuyXBXWBGQwX7qmKbu56HzC\",\n            \"token\": null,\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T07:44:55.058Z\",\n            \"updated_at\": \"2024-06-03T07:44:55.058Z\"\n        },\n        {\n            \"id\": \"35a8d92b-2cb2-407b-9500-77a73373cf5b\",\n            \"role\": \"member\",\n            \"name\": \"Member 1\",\n            \"email\": \"member1@gmail.com\",\n            \"password\": \"$2b$10$mVH3ZoZNo.ZUGPyeYJCk.ORSlgP2aDyuk/4VtS0Wh8ZClACfgtygO\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1YThkOTJiLTJjYjItNDA3Yi05NTAwLTc3YTczMzczY2Y1YiIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTIwOTEsImV4cCI6MTcxNzM5NTY5MX0.ApSkPulPfJqC-qLNdVjy9rqFoC5FLUQlDJfYsq97K6U\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"a8a54f69-1bfa-43d5-b757-acf3e286afd9\",\n            \"role\": \"admin\",\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\",\n            \"password\": \"$2b$10$pYH3T3DYHnrCJ6/wbhaoOO7VFCGveQw1VkNmZZpAoZjb3mmsxKSL.\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4YTU0ZjY5LTFiZmEtNDNkNS1iNzU3LWFjZjNlMjg2YWZkOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NDA4MjM4LCJleHAiOjE3MTc0MTE4Mzh9.XnUJ27_g9hN_MJzhvKaz-e1j7ZvFh0Q8fJXJgv3PJ7k\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        },\n        {\n            \"id\": \"30c11aae-49b1-4719-9631-b31ef8d33251\",\n            \"role\": \"superadmin\",\n            \"name\": \"Super Admin 1\",\n            \"email\": \"superadmin1@gmail.com\",\n            \"password\": \"$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72\",\n            \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0MDg2MTQsImV4cCI6MTcxNzQxMjIxNH0.JbSgscpPbZ229n-YDEmtSrTDWyyAYMtTXj9I_Q2XqFo\",\n            \"refresh_token\": null,\n            \"created_at\": \"2024-06-03T05:00:50.423Z\",\n            \"updated_at\": \"2024-06-03T05:00:50.423Z\"\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetListCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetListCar",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "3254"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"cb6-vAs+TAL7MvWAamSF24FMmnnOYC8\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:01:10 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data found\",\n    \"data\": [\n        {\n            \"id\": 1,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577506/cars/eu5qi9cv24uxjj6iar3d.png\",\n            \"image_public_id\": \"cars/eu5qi9cv24uxjj6iar3d\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"[\\n      \\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\\n    ]\",\n            \"specs\": \"[\\n      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\\n      \\\"Locking glove box\\\",\\n      \\\"Pwr front vented disc/rear drum brakes\\\"\\n    ]\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"created_at\": \"2024-06-05T08:51:46.820Z\",\n            \"updated_at\": \"2024-06-05T08:51:46.820Z\",\n            \"deleted_at\": \"2024-06-05T08:51:38.690Z\",\n            \"userUpdated\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userDeleted\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            }\n        },\n        {\n            \"id\": 2,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577878/cars/m27b2fjhqauyipwn0ymf.png\",\n            \"image_public_id\": \"cars/m27b2fjhqauyipwn0ymf\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"Keyless Entry,Power Windows,MP3 (Single Disc),CD (Multi Disc),Navigation\",\n            \"specs\": \"Rear passenger map pockets,Electrochromic rearview mirror,Dual chrome exhaust tips\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:57:58.411Z\",\n            \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n            \"deleted_at\": null,\n            \"userUpdated\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userDeleted\": null\n        },\n        {\n            \"id\": 3,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png\",\n            \"image_public_id\": \"cars/ktkpgaflnnwpawmeukrc\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"\\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\",\n            \"specs\": \"      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:59:16.037Z\",\n            \"updated_at\": \"2024-06-05T08:59:16.037Z\",\n            \"deleted_at\": null,\n            \"userUpdated\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            },\n            \"userDeleted\": null\n        }\n    ]\n}"
+						}
+					]
+				},
+				{
+					"name": "GetCarById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetCarById",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"454-p7ZFqOIV2WeUHm5jBr+swUkFzto\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:14:13 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data found\",\n    \"data\": {\n        \"id\": 2,\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png\",\n        \"image_public_id\": \"cars/zf3nbkkhiqae7fskdp24\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2020,\n        \"options\": \"\\\"Keyless Entry\\\",\\\"Power Windows\\\",\\\"MP3 (Single Disc)\\\",\\n\\\"CD (Multi Disc)\\\",\\\"Navigation\\\"\",\n        \"specs\": \"\\\"Rear passenger map pockets\\\",\\\"Electrochromic rearview mirror\\\",\\\"Dual chrome exhaust tips\\\"\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"updated_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:57:58.411Z\",\n        \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n        \"deleted_at\": null,\n        \"userDeleted\": null,\n        \"userCreated\": {\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\"\n        },\n        \"userUpdated\": {\n            \"name\": \"Admin 1\",\n            \"email\": \"admin1@gmail.com\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "CreateDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "plate",
+									"value": "D-2345UYD",
+									"type": "text"
+								},
+								{
+									"key": "manufacture",
+									"value": "Toyota",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "G",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/avanza.png"
+								},
+								{
+									"key": "rent_per_day",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+									"type": "text"
+								},
+								{
+									"key": "available_at",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "transmission",
+									"value": "manual",
+									"description": "enum(\"manual\", \"automatic)",
+									"type": "text"
+								},
+								{
+									"key": "available",
+									"value": "true",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "MVP",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2019",
+									"type": "text"
+								},
+								{
+									"key": "options",
+									"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+									"type": "text"
+								},
+								{
+									"key": "specs",
+									"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "CreateDataCar",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "plate",
+											"value": "D-2345UYD",
+											"type": "text"
+										},
+										{
+											"key": "manufacture",
+											"value": "Toyota",
+											"type": "text"
+										},
+										{
+											"key": "model",
+											"value": "G",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/avanza.png"
+										},
+										{
+											"key": "rent_per_day",
+											"value": "150000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+											"type": "text"
+										},
+										{
+											"key": "available_at",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "transmission",
+											"value": "manual",
+											"description": "enum(\"manual\", \"automatic)",
+											"type": "text"
+										},
+										{
+											"key": "available",
+											"value": "true",
+											"description": "boolean",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "MVP",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2019",
+											"type": "text"
+										},
+										{
+											"key": "options",
+											"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+											"type": "text"
+										},
+										{
+											"key": "specs",
+											"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1003"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3eb-OXhFSzRDcxe/HZL6LX2hp6CSPRE\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:59:16 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Data created successfully\",\n    \"data\": {\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2019,\n        \"options\": \"\\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\",\n        \"specs\": \"      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\",\n        \"image_public_id\": \"cars/ktkpgaflnnwpawmeukrc\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"id\": 3,\n        \"updated_by\": null,\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:59:16.037Z\",\n        \"updated_at\": \"2024-06-05T08:59:16.037Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "UpdateDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "plate",
+									"value": "D-2345UYD",
+									"type": "text"
+								},
+								{
+									"key": "manufacture",
+									"value": "Toyota",
+									"type": "text"
+								},
+								{
+									"key": "model",
+									"value": "G",
+									"type": "text"
+								},
+								{
+									"key": "image",
+									"type": "file",
+									"src": "/C:/Users/Sahid/Downloads/avanza.png"
+								},
+								{
+									"key": "rent_per_day",
+									"value": "150000",
+									"type": "text"
+								},
+								{
+									"key": "capacity",
+									"value": "8",
+									"type": "text"
+								},
+								{
+									"key": "description",
+									"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+									"type": "text"
+								},
+								{
+									"key": "available_at",
+									"value": "2024-01-01",
+									"description": "date",
+									"type": "text"
+								},
+								{
+									"key": "transmission",
+									"value": "manual",
+									"description": "enum(\"manual\", \"automatic)",
+									"type": "text"
+								},
+								{
+									"key": "available",
+									"value": "true",
+									"description": "boolean",
+									"type": "text"
+								},
+								{
+									"key": "type",
+									"value": "MVP",
+									"type": "text"
+								},
+								{
+									"key": "year",
+									"value": "2020",
+									"type": "text"
+								},
+								{
+									"key": "options",
+									"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+									"type": "text"
+								},
+								{
+									"key": "specs",
+									"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "2"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "UpdateDataCar",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "formdata",
+									"formdata": [
+										{
+											"key": "plate",
+											"value": "D-2345UYD",
+											"type": "text"
+										},
+										{
+											"key": "manufacture",
+											"value": "Toyota",
+											"type": "text"
+										},
+										{
+											"key": "model",
+											"value": "G",
+											"type": "text"
+										},
+										{
+											"key": "image",
+											"type": "file",
+											"src": "/C:/Users/Sahid/Downloads/avanza.png"
+										},
+										{
+											"key": "rent_per_day",
+											"value": "150000",
+											"type": "text"
+										},
+										{
+											"key": "capacity",
+											"value": "8",
+											"type": "text"
+										},
+										{
+											"key": "description",
+											"value": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+											"type": "text"
+										},
+										{
+											"key": "available_at",
+											"value": "2024-01-01",
+											"description": "date",
+											"type": "text"
+										},
+										{
+											"key": "transmission",
+											"value": "manual",
+											"description": "enum(\"manual\", \"automatic)",
+											"type": "text"
+										},
+										{
+											"key": "available",
+											"value": "true",
+											"description": "boolean",
+											"type": "text"
+										},
+										{
+											"key": "type",
+											"value": "MVP",
+											"type": "text"
+										},
+										{
+											"key": "year",
+											"value": "2020",
+											"type": "text"
+										},
+										{
+											"key": "options",
+											"value": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+											"type": "text"
+										},
+										{
+											"key": "specs",
+											"value": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+											"type": "text"
+										}
+									]
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "2"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "984"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"3d8-ECnNbsOdlqroFi9Y3aJMRJYnLtw\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:12:23 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data updated successfully\",\n    \"data\": {\n        \"id\": 2,\n        \"plate\": \"D-2345UYD\",\n        \"manufacture\": \"Toyota\",\n        \"model\": \"G\",\n        \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png\",\n        \"image_public_id\": \"cars/zf3nbkkhiqae7fskdp24\",\n        \"rent_per_day\": 150000,\n        \"capacity\": 8,\n        \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n        \"available_at\": \"2023-12-31T17:00:00.000Z\",\n        \"transmission\": \"manual\",\n        \"available\": true,\n        \"type\": \"MVP\",\n        \"year\": 2020,\n        \"options\": \"\\\"Keyless Entry\\\",\\\"Power Windows\\\",\\\"MP3 (Single Disc)\\\",\\n\\\"CD (Multi Disc)\\\",\\\"Navigation\\\"\",\n        \"specs\": \"\\\"Rear passenger map pockets\\\",\\\"Electrochromic rearview mirror\\\",\\\"Dual chrome exhaust tips\\\"\",\n        \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"updated_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n        \"deleted_by\": null,\n        \"created_at\": \"2024-06-05T08:57:58.411Z\",\n        \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n        \"deleted_at\": null\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "DeleteDataCar",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTc3NDIxLCJleHAiOjE3MTc1ODEwMjF9.wNQzLJpfk0icYATGbLwfdPG8DnJzTZLFJ2lr2TForYY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/:id",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								":id"
+							],
+							"variable": [
+								{
+									"key": "id",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "DeleteDataCar",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "",
+										"value": "",
+										"type": "text"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "81"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"51-SFQCmMuTSLBDwK3PgfKovsRnnWU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 08:54:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data deleted successfully\",\n    \"data\": null\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Member",
+			"item": [
+				{
+					"name": "Register Member",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\":\"Member 11\",\r\n    \"email\":\"member11@gmail.com\",\r\n    \"password\":\"member11password\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/v1/users/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Register Member",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "application/json",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"name\":\"Member 11\",\r\n    \"email\":\"member11@gmail.com\",\r\n    \"password\":\"member11password\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:3000/api/v1/users/register",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"users",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "370"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"172-lFhCErCr8RJM20I9ma2FnUWFO68\""
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 03 Jun 2024 10:02:58 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 201,\n    \"status\": \"success\",\n    \"message\": \"Register successfully\",\n    \"data\": {\n        \"name\": \"Member 11\",\n        \"email\": \"member11@gmail.com\",\n        \"password\": \"$2b$10$zQ9MK6y0dR4JhMYE4K2X..KnHLWU.i.bnMGLuGRsD9BC1q9G2qz7K\",\n        \"id\": \"c84487d1-2cab-4544-aee6-4c6ccfca128c\",\n        \"role\": \"member\",\n        \"token\": null,\n        \"refresh_token\": null,\n        \"created_at\": \"2024-06-03T10:02:58.812Z\",\n        \"updated_at\": \"2024-06-03T10:02:58.812Z\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "GetListCarPublic",
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:3000/api/v1/cars/public",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"v1",
+								"cars",
+								"public"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "GetListCarPublic",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:3000/api/v1/cars/public",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"api",
+										"v1",
+										"cars",
+										"public"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "2026"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"7ea-k/hRXtdEQv07+gm5oUYImLSnkUU\""
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 05 Jun 2024 09:02:47 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"code\": 200,\n    \"status\": \"success\",\n    \"message\": \"Data found\",\n    \"data\": [\n        {\n            \"id\": 2,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577878/cars/m27b2fjhqauyipwn0ymf.png\",\n            \"image_public_id\": \"cars/m27b2fjhqauyipwn0ymf\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"Keyless Entry,Power Windows,MP3 (Single Disc),CD (Multi Disc),Navigation\",\n            \"specs\": \"Rear passenger map pockets,Electrochromic rearview mirror,Dual chrome exhaust tips\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:57:58.411Z\",\n            \"updated_at\": \"2024-06-05T08:57:58.411Z\",\n            \"deleted_at\": null,\n            \"userUpdated\": null,\n            \"userDeleted\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            }\n        },\n        {\n            \"id\": 3,\n            \"plate\": \"D-2345UYD\",\n            \"manufacture\": \"Toyota\",\n            \"model\": \"G\",\n            \"image\": \"https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png\",\n            \"image_public_id\": \"cars/ktkpgaflnnwpawmeukrc\",\n            \"rent_per_day\": 150000,\n            \"capacity\": 8,\n            \"description\": \"Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.\",\n            \"available_at\": \"2023-12-31T17:00:00.000Z\",\n            \"transmission\": \"manual\",\n            \"available\": true,\n            \"type\": \"MVP\",\n            \"year\": 2019,\n            \"options\": \"\\\"Keyless Entry\\\",\\n      \\\"Power Windows\\\",\\n      \\\"MP3 (Single Disc)\\\",\\n      \\\"CD (Multi Disc)\\\",\\n      \\\"Navigation\\\"\",\n            \"specs\": \"      \\\"Rear passenger map pockets\\\",\\n      \\\"Electrochromic rearview mirror\\\",\\n      \\\"Dual chrome exhaust tips\\\",\",\n            \"created_by\": \"69faf45f-01c9-431b-9916-31c4a4fb05f9\",\n            \"updated_by\": null,\n            \"deleted_by\": null,\n            \"created_at\": \"2024-06-05T08:59:16.037Z\",\n            \"updated_at\": \"2024-06-05T08:59:16.037Z\",\n            \"deleted_at\": null,\n            \"userUpdated\": null,\n            \"userDeleted\": null,\n            \"userCreated\": {\n                \"name\": \"Admin 1\",\n                \"email\": \"admin1@gmail.com\"\n            }\n        }\n    ]\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

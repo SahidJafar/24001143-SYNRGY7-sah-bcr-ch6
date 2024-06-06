@@ -1,0 +1,1875 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Binar Car Rental API",
+    "version": "1.0.0",
+    "description": "Binar Car Rental API",
+    "contact": {
+      "name": "Sahid Jafar"
+    }
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      },
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Auth"
+    },
+    {
+      "name": "Super Admin"
+    },
+    {
+      "name": "Admin"
+    },
+    {
+      "name": "Member"
+    }
+  ],
+  "paths": {
+    "/api/v1/users/login": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "superadmin1@gmail.com",
+                  "password": "superadmin1"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "749"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"2ed-WC5PwCySbk4x6RiOJDoIrfhSbJw\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 07:35:59 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "examples": {
+                  "example-0": {
+                    "summary": "Login(superadmin)",
+                    "value": {
+                      "code": 200,
+                      "status": "success",
+                      "message": "Login successfully",
+                      "data": {
+                        "user": {
+                          "id": "e8e3a44d-8cd3-45fb-a405-1f2dac89f098",
+                          "name": "Super Admin 1",
+                          "email": "superadmin1@gmail.com",
+                          "role": "superadmin"
+                        },
+                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzU3NjU1OX0.3h1UcoeW1MP1IqF68nqOcBYAaVV9ZInc3IBfQHiUTBs",
+                        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzY1OTM1OX0.bkq05k5c-DUpKtvAHsy_dp7CuPMjuQtSXC_gPkfPRDE"
+                      }
+                    }
+                  },
+                  "example-1": {
+                    "summary": "Login(admin)",
+                    "value": {
+                      "code": 200,
+                      "status": "success",
+                      "message": "Login successfully",
+                      "data": {
+                        "user": {
+                          "id": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                          "name": "Admin 1",
+                          "email": "admin1@gmail.com",
+                          "role": "admin"
+                        },
+                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTczMDA3LCJleHAiOjE3MTc1NzY2MDd9.wrT5TWfwGPmXjPWasogFJE4ECyEEFvtLW9PbDIY9d2s",
+                        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY5ZmFmNDVmLTAxYzktNDMxYi05OTE2LTMxYzRhNGZiMDVmOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NTczMDA3LCJleHAiOjE3MTc2NTk0MDd9.Q4_7gbtxczAFatDqhGh1-aWM03Hs2_I-ZrOj5AUpt1k"
+                      }
+                    }
+                  },
+                  "example-2": {
+                    "summary": "Login(member)",
+                    "value": {
+                      "code": 200,
+                      "status": "success",
+                      "message": "Login successfully",
+                      "data": {
+                        "user": {
+                          "id": "cd7c5965-aeaf-4753-8a4c-6b0554064e53",
+                          "name": "Member 1",
+                          "email": "member1@gmail.com",
+                          "role": "member"
+                        },
+                        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkN2M1OTY1LWFlYWYtNDc1My04YTRjLTZiMDU1NDA2NGU1MyIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwNDYsImV4cCI6MTcxNzU3NjY0Nn0.UVIJXawbgaGQrCy4DDlcFaqsghrdiWZ73EztiVgIMCo",
+                        "refresh_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNkN2M1OTY1LWFlYWYtNDc1My04YTRjLTZiMDU1NDA2NGU1MyIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwNDYsImV4cCI6MTcxNzY1OTQ0Nn0.B1qw_BBEzQ4HsEGAKgrqKSxLUDb2-QyKS0xII2SqsrU"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/refresh-token": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Refresh Token",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzI5NTksImV4cCI6MTcxNzY1OTM1OX0.bkq05k5c-DUpKtvAHsy_dp7CuPMjuQtSXC_gPkfPRDE"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "360"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"168-nccGlv5+jeNEzaxgKbXqraAu7CM\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 07:38:10 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Token updated successfully",
+                  "data": {
+                    "token": {
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImU4ZTNhNDRkLThjZDMtNDVmYi1hNDA1LTFmMmRhYzg5ZjA5OCIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc1NzMwOTAsImV4cCI6MTcxNzU3NjY5MH0.ZFuq2K7slqPFq69tAyl4kRUM9y61QXOFk_eEHwPafas"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/logout": {
+      "post": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "Logout",
+        "requestBody": {
+          "content": {}
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "Content-Type",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "75"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"4b-eCWHxhPl9LUDnk/tpoe8PTkQCog\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 07:47:05 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Logout successfully",
+                  "data": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/me": {
+      "get": {
+        "tags": [
+          "Auth"
+        ],
+        "summary": "whoAmI",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "648"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"288-bkbu9kM0hrjyNphQRtva7uiIfAo\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Jun 2024 05:33:18 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Berhasil mendapatkan data user",
+                  "data": {
+                    "id": "30c11aae-49b1-4719-9631-b31ef8d33251",
+                    "role": "superadmin",
+                    "name": "Super Admin 1",
+                    "email": "superadmin1@gmail.com",
+                    "password": "$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72",
+                    "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTI1MTUsImV4cCI6MTcxNzM5NjExNX0.9Ua8O_VLg1P9_tZkLMR_Teq4NG4QronaD8Sz5PzFsg4",
+                    "refresh_token": null,
+                    "created_at": "2024-06-03T05:00:50.423Z",
+                    "updated_at": "2024-06-03T05:00:50.423Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "GetListUser",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "7666"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1df2-uS/67nms+V2VhDnvhoaWxTAWgqQ\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Jun 2024 09:57:13 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "User data found",
+                  "data": [
+                    {
+                      "id": "b989ca9f-3821-4e3f-a7dc-52166096da09",
+                      "role": "superadmin",
+                      "name": "Super Admin 2",
+                      "email": "superadmin2@gmail.com",
+                      "password": "$2b$10$44NHwLXWr0ZqFaz0gnXGKu.D6jp3HHfiVLYbIcyfl5zXSI0pWWj8a",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "702f2b9d-fe8d-46a1-aeba-c2aa889688d1",
+                      "role": "superadmin",
+                      "name": "Super Admin 3",
+                      "email": "superadmin3@gmail.com",
+                      "password": "$2b$10$9IB7V8jGd2vnNDiP0Zrc4.k6O9SAk89JSEVrLrn3gW/AeYBgBPGGu",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "ec100a0c-8942-4c98-a5bd-eddbc4eaac48",
+                      "role": "superadmin",
+                      "name": "Super Admin 4",
+                      "email": "superadmin4@gmail.com",
+                      "password": "$2b$10$9ruEQdrSxhk8iIe83uqdWOBJq4MYRYPWUGjw26dermuQ2Lrc4gI.e",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "1b42759a-f39a-4a80-a5f0-3300091bd9dd",
+                      "role": "superadmin",
+                      "name": "Super Admin 5",
+                      "email": "superadmin5@gmail.com",
+                      "password": "$2b$10$3sgvPkLZ0RpKrGkGyozhiO6keroHBCA7sbz75SVlJnLGSzhxj6kD.",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "21b88d34-20ac-43ca-895c-eb8e2c1067d3",
+                      "role": "admin",
+                      "name": "Admin 2",
+                      "email": "admin2@gmail.com",
+                      "password": "$2b$10$jCCfW1klI4jgGzP2Le7xaucrKrnV0bN9lyCfb.zblmqmlyI.BI9d6",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "f4299f29-8081-4d84-ba3f-06b8a91cc3bc",
+                      "role": "admin",
+                      "name": "Admin 3",
+                      "email": "admin3@gmail.com",
+                      "password": "$2b$10$j7KDkFR/3.LWm2/UW3B9F.su4nE..z7C/Y36mJCDqElQoG8m9pnl2",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "97c8f941-915b-4e92-b78a-61fc2ae262a5",
+                      "role": "admin",
+                      "name": "Admin 4",
+                      "email": "admin4@gmail.com",
+                      "password": "$2b$10$i/RU2bPYw2eCyI3RasyxQuw2q3z0DN2C7V2jo9RGDVUGZQOIRR1Z6",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "79a4ccd8-81a4-4510-953d-1f0f94fcd72c",
+                      "role": "admin",
+                      "name": "Admin 5",
+                      "email": "admin5@gmail.com",
+                      "password": "$2b$10$MTy08V8WPIVNC4BaA7i1gue7qa4aRQnf/ZRI8b31R/.t42B4ZgOYO",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "6d32bf31-3074-42a5-bd69-b2ef29f14383",
+                      "role": "admin",
+                      "name": "Admin 6",
+                      "email": "admin6@gmail.com",
+                      "password": "$2b$10$uyUCAQsiIbt/vn.qTAd1XuUbFkxRdOpJMCme.ETYpxvuUKXNMTToK",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "3ef99117-81af-4a2b-a214-29273cfb928e",
+                      "role": "admin",
+                      "name": "Admin 7",
+                      "email": "admin7@gmail.com",
+                      "password": "$2b$10$7cD7pFHNvcn0cXjOwCeZ3.BlUS4u2OqC80wVXZZByG1W6/3WKDVUK",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "d4ad3ebe-1601-4050-a61b-f9aeefee9fc0",
+                      "role": "member",
+                      "name": "Member 2",
+                      "email": "member2@gmail.com",
+                      "password": "$2b$10$DRbkNvXcxp6izajMDcOV1e7AYrZsCDL8X1JuiNVC24gekuvi3QfaG",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "54014218-4d59-4818-bb18-3af63b4e2892",
+                      "role": "member",
+                      "name": "Member 3",
+                      "email": "member3@gmail.com",
+                      "password": "$2b$10$z54cuc5C2WQG0gFC8y974.Qdd7Ra.LDuSUl6zzU6ECtw4Y.KRQCua",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "2e15751a-fefc-44a4-b996-a518cece1bab",
+                      "role": "member",
+                      "name": "Member 4",
+                      "email": "member4@gmail.com",
+                      "password": "$2b$10$R9yfeqBB.JEhzMb4O8nNiOkiMKl/AOMzEIP5BE3Aa0yQcZzI7aWzO",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "5d95f091-2756-4619-909d-fda5625f677b",
+                      "role": "member",
+                      "name": "Member 5",
+                      "email": "member5@gmail.com",
+                      "password": "$2b$10$Y8xwp5FVIzcLYEsMG/pEs.DCEUGw0kzPwssIOXPakuHfeOaHHULSS",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "6afeffd4-549f-4192-a3ff-30129524cc05",
+                      "role": "member",
+                      "name": "Member 6",
+                      "email": "member6@gmail.com",
+                      "password": "$2b$10$49mSMO7haj2UfEG/.Gwbd.J6vWYIwyAg99dyYgUQny.3rBSblWA9S",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "66871a03-b135-498d-8cd4-c991f22ff580",
+                      "role": "member",
+                      "name": "Member 7",
+                      "email": "member7@gmail.com",
+                      "password": "$2b$10$oC7UvpQ2939z4XN9vZaiA.7KvsUAy6TRaQBK.A7SyU3mORtqjV91K",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "97f51d5c-f3b8-445e-b5b1-e058f2a1b937",
+                      "role": "member",
+                      "name": "Member 8",
+                      "email": "member8@gmail.com",
+                      "password": "$2b$10$WY9NYG5FisnG/.5Ho6xDVuPw1mXru..0miA350yALARF/xpxKFC/K",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "0d8d63c4-2cfa-496d-bfa6-0bca2d06c179",
+                      "role": "member",
+                      "name": "Member 9",
+                      "email": "member9@gmail.com",
+                      "password": "$2b$10$9KWQKVXPBHiPgonbBkLHduXBWRi1cz1NY8Udvq1DUawYbyUf5iAbu",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "5d5d348f-42f1-440b-8fb5-03c19f1dbaee",
+                      "role": "member",
+                      "name": "Member 10",
+                      "email": "member10@gmail.com",
+                      "password": "$2b$10$MWmiyxbBRMTzwalya8Bh1.WTxYqC3WhAnWZ2sw0iYU5yIZZ5ILkje",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "6cff09e6-e02f-4c13-84ee-16ea9b1f1874",
+                      "role": "admin",
+                      "name": "Admin 8",
+                      "email": "admin8@gmail.com",
+                      "password": "$2b$10$TDW.Kyqcl9RvRLnA1FiLOek.t1crCjpuyXBXWBGQwX7qmKbu56HzC",
+                      "token": null,
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T07:44:55.058Z",
+                      "updated_at": "2024-06-03T07:44:55.058Z"
+                    },
+                    {
+                      "id": "35a8d92b-2cb2-407b-9500-77a73373cf5b",
+                      "role": "member",
+                      "name": "Member 1",
+                      "email": "member1@gmail.com",
+                      "password": "$2b$10$mVH3ZoZNo.ZUGPyeYJCk.ORSlgP2aDyuk/4VtS0Wh8ZClACfgtygO",
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjM1YThkOTJiLTJjYjItNDA3Yi05NTAwLTc3YTczMzczY2Y1YiIsIm5hbWUiOiJNZW1iZXIgMSIsImVtYWlsIjoibWVtYmVyMUBnbWFpbC5jb20iLCJpYXQiOjE3MTczOTIwOTEsImV4cCI6MTcxNzM5NTY5MX0.ApSkPulPfJqC-qLNdVjy9rqFoC5FLUQlDJfYsq97K6U",
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "a8a54f69-1bfa-43d5-b757-acf3e286afd9",
+                      "role": "admin",
+                      "name": "Admin 1",
+                      "email": "admin1@gmail.com",
+                      "password": "$2b$10$pYH3T3DYHnrCJ6/wbhaoOO7VFCGveQw1VkNmZZpAoZjb3mmsxKSL.",
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImE4YTU0ZjY5LTFiZmEtNDNkNS1iNzU3LWFjZjNlMjg2YWZkOSIsIm5hbWUiOiJBZG1pbiAxIiwiZW1haWwiOiJhZG1pbjFAZ21haWwuY29tIiwiaWF0IjoxNzE3NDA4MjM4LCJleHAiOjE3MTc0MTE4Mzh9.XnUJ27_g9hN_MJzhvKaz-e1j7ZvFh0Q8fJXJgv3PJ7k",
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    },
+                    {
+                      "id": "30c11aae-49b1-4719-9631-b31ef8d33251",
+                      "role": "superadmin",
+                      "name": "Super Admin 1",
+                      "email": "superadmin1@gmail.com",
+                      "password": "$2b$10$4O6T3pbnveJLUcRlzDDFh.zT/tD1syAb6J3wgfDocLiffeE3rWc72",
+                      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjMwYzExYWFlLTQ5YjEtNDcxOS05NjMxLWIzMWVmOGQzMzI1MSIsIm5hbWUiOiJTdXBlciBBZG1pbiAxIiwiZW1haWwiOiJzdXBlcmFkbWluMUBnbWFpbC5jb20iLCJpYXQiOjE3MTc0MDg2MTQsImV4cCI6MTcxNzQxMjIxNH0.JbSgscpPbZ229n-YDEmtSrTDWyyAYMtTXj9I_Q2XqFo",
+                      "refresh_token": null,
+                      "created_at": "2024-06-03T05:00:50.423Z",
+                      "updated_at": "2024-06-03T05:00:50.423Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Super Admin"
+        ],
+        "summary": "Register Admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Admin 9",
+                  "email": "admin9@gmail.com",
+                  "password": "admin9password"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "369"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"171-huRvFKHl1tsDAw/FMPhVECn7fzE\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Jun 2024 07:44:55 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 201,
+                  "status": "success",
+                  "message": "Data created successfully",
+                  "data": {
+                    "name": "Admin 8",
+                    "email": "admin8@gmail.com",
+                    "password": "$2b$10$TDW.Kyqcl9RvRLnA1FiLOek.t1crCjpuyXBXWBGQwX7qmKbu56HzC",
+                    "id": "6cff09e6-e02f-4c13-84ee-16ea9b1f1874",
+                    "role": "admin",
+                    "token": null,
+                    "refresh_token": null,
+                    "created_at": "2024-06-03T07:44:55.058Z",
+                    "updated_at": "2024-06-03T07:44:55.058Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cars": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "GetListCar",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "3254"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"cb6-vAs+TAL7MvWAamSF24FMmnnOYC8\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 09:01:10 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Data found",
+                  "data": [
+                    {
+                      "id": 1,
+                      "plate": "D-2345UYD",
+                      "manufacture": "Toyota",
+                      "model": "G",
+                      "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577506/cars/eu5qi9cv24uxjj6iar3d.png",
+                      "image_public_id": "cars/eu5qi9cv24uxjj6iar3d",
+                      "rent_per_day": 150000,
+                      "capacity": 8,
+                      "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                      "available_at": "2023-12-31T17:00:00.000Z",
+                      "transmission": "manual",
+                      "available": true,
+                      "type": "MVP",
+                      "year": 2019,
+                      "options": "[\n      \"Keyless Entry\",\n      \"Power Windows\",\n      \"MP3 (Single Disc)\",\n      \"CD (Multi Disc)\",\n      \"Navigation\"\n    ]",
+                      "specs": "[\n      \"Rear passenger map pockets\",\n      \"Electrochromic rearview mirror\",\n      \"Dual chrome exhaust tips\",\n      \"Locking glove box\",\n      \"Pwr front vented disc/rear drum brakes\"\n    ]",
+                      "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "updated_by": null,
+                      "deleted_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "created_at": "2024-06-05T08:51:46.820Z",
+                      "updated_at": "2024-06-05T08:51:46.820Z",
+                      "deleted_at": "2024-06-05T08:51:38.690Z",
+                      "userUpdated": null,
+                      "userCreated": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      },
+                      "userDeleted": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      }
+                    },
+                    {
+                      "id": 2,
+                      "plate": "D-2345UYD",
+                      "manufacture": "Toyota",
+                      "model": "G",
+                      "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577878/cars/m27b2fjhqauyipwn0ymf.png",
+                      "image_public_id": "cars/m27b2fjhqauyipwn0ymf",
+                      "rent_per_day": 150000,
+                      "capacity": 8,
+                      "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                      "available_at": "2023-12-31T17:00:00.000Z",
+                      "transmission": "manual",
+                      "available": true,
+                      "type": "MVP",
+                      "year": 2019,
+                      "options": "Keyless Entry,Power Windows,MP3 (Single Disc),CD (Multi Disc),Navigation",
+                      "specs": "Rear passenger map pockets,Electrochromic rearview mirror,Dual chrome exhaust tips",
+                      "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "updated_by": null,
+                      "deleted_by": null,
+                      "created_at": "2024-06-05T08:57:58.411Z",
+                      "updated_at": "2024-06-05T08:57:58.411Z",
+                      "deleted_at": null,
+                      "userUpdated": null,
+                      "userCreated": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      },
+                      "userDeleted": null
+                    },
+                    {
+                      "id": 3,
+                      "plate": "D-2345UYD",
+                      "manufacture": "Toyota",
+                      "model": "G",
+                      "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png",
+                      "image_public_id": "cars/ktkpgaflnnwpawmeukrc",
+                      "rent_per_day": 150000,
+                      "capacity": 8,
+                      "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                      "available_at": "2023-12-31T17:00:00.000Z",
+                      "transmission": "manual",
+                      "available": true,
+                      "type": "MVP",
+                      "year": 2019,
+                      "options": "\"Keyless Entry\",\n      \"Power Windows\",\n      \"MP3 (Single Disc)\",\n      \"CD (Multi Disc)\",\n      \"Navigation\"",
+                      "specs": "      \"Rear passenger map pockets\",\n      \"Electrochromic rearview mirror\",\n      \"Dual chrome exhaust tips\",",
+                      "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "updated_by": null,
+                      "deleted_by": null,
+                      "created_at": "2024-06-05T08:59:16.037Z",
+                      "updated_at": "2024-06-05T08:59:16.037Z",
+                      "deleted_at": null,
+                      "userUpdated": null,
+                      "userCreated": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      },
+                      "userDeleted": null
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "CreateDataCar",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plate": {
+                    "type": "string",
+                    "example": "D-2345UYD"
+                  },
+                  "manufacture": {
+                    "type": "string",
+                    "example": "Toyota"
+                  },
+                  "model": {
+                    "type": "string",
+                    "example": "G"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "rent_per_day": {
+                    "type": "integer",
+                    "example": "150000"
+                  },
+                  "capacity": {
+                    "type": "integer",
+                    "example": "8"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box."
+                  },
+                  "available_at": {
+                    "type": "string",
+                    "description": "date",
+                    "example": "2024-01-01"
+                  },
+                  "transmission": {
+                    "type": "string",
+                    "description": "enum(\"manual\", \"automatic)",
+                    "example": "manual"
+                  },
+                  "available": {
+                    "type": "boolean",
+                    "description": "boolean",
+                    "example": "true"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "MVP"
+                  },
+                  "year": {
+                    "type": "integer",
+                    "example": "2019"
+                  },
+                  "options": {
+                    "type": "string",
+                    "example": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\""
+                  },
+                  "specs": {
+                    "type": "string",
+                    "example": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "1003"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"3eb-OXhFSzRDcxe/HZL6LX2hp6CSPRE\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 08:59:16 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 201,
+                  "status": "success",
+                  "message": "Data created successfully",
+                  "data": {
+                    "plate": "D-2345UYD",
+                    "manufacture": "Toyota",
+                    "model": "G",
+                    "rent_per_day": 150000,
+                    "capacity": 8,
+                    "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                    "available_at": "2023-12-31T17:00:00.000Z",
+                    "transmission": "manual",
+                    "available": true,
+                    "type": "MVP",
+                    "year": 2019,
+                    "options": "\"Keyless Entry\",\n      \"Power Windows\",\n      \"MP3 (Single Disc)\",\n      \"CD (Multi Disc)\",\n      \"Navigation\"",
+                    "specs": "      \"Rear passenger map pockets\",\n      \"Electrochromic rearview mirror\",\n      \"Dual chrome exhaust tips\",",
+                    "image_public_id": "cars/ktkpgaflnnwpawmeukrc",
+                    "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png",
+                    "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                    "id": 3,
+                    "updated_by": null,
+                    "deleted_by": null,
+                    "created_at": "2024-06-05T08:59:16.037Z",
+                    "updated_at": "2024-06-05T08:59:16.037Z",
+                    "deleted_at": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cars/{id}": {
+      "get": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "GetCarById",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "1108"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"454-p7ZFqOIV2WeUHm5jBr+swUkFzto\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 09:14:13 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Data found",
+                  "data": {
+                    "id": 2,
+                    "plate": "D-2345UYD",
+                    "manufacture": "Toyota",
+                    "model": "G",
+                    "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png",
+                    "image_public_id": "cars/zf3nbkkhiqae7fskdp24",
+                    "rent_per_day": 150000,
+                    "capacity": 8,
+                    "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                    "available_at": "2023-12-31T17:00:00.000Z",
+                    "transmission": "manual",
+                    "available": true,
+                    "type": "MVP",
+                    "year": 2020,
+                    "options": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+                    "specs": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+                    "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                    "updated_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                    "deleted_by": null,
+                    "created_at": "2024-06-05T08:57:58.411Z",
+                    "updated_at": "2024-06-05T08:57:58.411Z",
+                    "deleted_at": null,
+                    "userDeleted": null,
+                    "userCreated": {
+                      "name": "Admin 1",
+                      "email": "admin1@gmail.com"
+                    },
+                    "userUpdated": {
+                      "name": "Admin 1",
+                      "email": "admin1@gmail.com"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "patch": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "UpdateDataCar",
+        "requestBody": {
+          "content": {
+            "multipart/form-data": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "plate": {
+                    "type": "string",
+                    "example": "D-2345UYD"
+                  },
+                  "manufacture": {
+                    "type": "string",
+                    "example": "Toyota"
+                  },
+                  "model": {
+                    "type": "string",
+                    "example": "G"
+                  },
+                  "image": {
+                    "type": "string",
+                    "format": "binary"
+                  },
+                  "rent_per_day": {
+                    "type": "integer",
+                    "example": "150000"
+                  },
+                  "capacity": {
+                    "type": "integer",
+                    "example": "8"
+                  },
+                  "description": {
+                    "type": "string",
+                    "example": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box."
+                  },
+                  "available_at": {
+                    "type": "string",
+                    "description": "date",
+                    "example": "2024-01-01"
+                  },
+                  "transmission": {
+                    "type": "string",
+                    "description": "enum(\"manual\", \"automatic)",
+                    "example": "manual"
+                  },
+                  "available": {
+                    "type": "boolean",
+                    "description": "boolean",
+                    "example": "true"
+                  },
+                  "type": {
+                    "type": "string",
+                    "example": "MVP"
+                  },
+                  "year": {
+                    "type": "integer",
+                    "example": "2020"
+                  },
+                  "options": {
+                    "type": "string",
+                    "example": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\""
+                  },
+                  "specs": {
+                    "type": "string",
+                    "example": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\""
+                  }
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          },
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "2"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "984"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"3d8-ECnNbsOdlqroFi9Y3aJMRJYnLtw\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 09:12:23 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Data updated successfully",
+                  "data": {
+                    "id": 2,
+                    "plate": "D-2345UYD",
+                    "manufacture": "Toyota",
+                    "model": "G",
+                    "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717578743/cars/zf3nbkkhiqae7fskdp24.png",
+                    "image_public_id": "cars/zf3nbkkhiqae7fskdp24",
+                    "rent_per_day": 150000,
+                    "capacity": 8,
+                    "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                    "available_at": "2023-12-31T17:00:00.000Z",
+                    "transmission": "manual",
+                    "available": true,
+                    "type": "MVP",
+                    "year": 2020,
+                    "options": "\"Keyless Entry\",\"Power Windows\",\"MP3 (Single Disc)\",\n\"CD (Multi Disc)\",\"Navigation\"",
+                    "specs": "\"Rear passenger map pockets\",\"Electrochromic rearview mirror\",\"Dual chrome exhaust tips\"",
+                    "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                    "updated_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                    "deleted_by": null,
+                    "created_at": "2024-06-05T08:57:58.411Z",
+                    "updated_at": "2024-06-05T08:57:58.411Z",
+                    "deleted_at": null
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Admin"
+        ],
+        "summary": "DeleteDataCar",
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "schema": {
+              "type": "integer"
+            },
+            "required": true,
+            "example": "1"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "81"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"51-SFQCmMuTSLBDwK3PgfKovsRnnWU\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 08:54:34 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Data deleted successfully",
+                  "data": null
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/users/register": {
+      "post": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "Register Member",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "name": "Member 11",
+                  "email": "member11@gmail.com",
+                  "password": "member11password"
+                }
+              }
+            }
+          }
+        },
+        "parameters": [
+          {
+            "name": "Accept",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "application/json"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "370"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"172-lFhCErCr8RJM20I9ma2FnUWFO68\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Mon, 03 Jun 2024 10:02:58 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 201,
+                  "status": "success",
+                  "message": "Register successfully",
+                  "data": {
+                    "name": "Member 11",
+                    "email": "member11@gmail.com",
+                    "password": "$2b$10$zQ9MK6y0dR4JhMYE4K2X..KnHLWU.i.bnMGLuGRsD9BC1q9G2qz7K",
+                    "id": "c84487d1-2cab-4544-aee6-4c6ccfca128c",
+                    "role": "member",
+                    "token": null,
+                    "refresh_token": null,
+                    "created_at": "2024-06-03T10:02:58.812Z",
+                    "updated_at": "2024-06-03T10:02:58.812Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/cars/public": {
+      "get": {
+        "tags": [
+          "Member"
+        ],
+        "summary": "GetListCarPublic",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "2026"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"7ea-k/hRXtdEQv07+gm5oUYImLSnkUU\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Wed, 05 Jun 2024 09:02:47 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "code": 200,
+                  "status": "success",
+                  "message": "Data found",
+                  "data": [
+                    {
+                      "id": 2,
+                      "plate": "D-2345UYD",
+                      "manufacture": "Toyota",
+                      "model": "G",
+                      "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577878/cars/m27b2fjhqauyipwn0ymf.png",
+                      "image_public_id": "cars/m27b2fjhqauyipwn0ymf",
+                      "rent_per_day": 150000,
+                      "capacity": 8,
+                      "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                      "available_at": "2023-12-31T17:00:00.000Z",
+                      "transmission": "manual",
+                      "available": true,
+                      "type": "MVP",
+                      "year": 2019,
+                      "options": "Keyless Entry,Power Windows,MP3 (Single Disc),CD (Multi Disc),Navigation",
+                      "specs": "Rear passenger map pockets,Electrochromic rearview mirror,Dual chrome exhaust tips",
+                      "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "updated_by": null,
+                      "deleted_by": null,
+                      "created_at": "2024-06-05T08:57:58.411Z",
+                      "updated_at": "2024-06-05T08:57:58.411Z",
+                      "deleted_at": null,
+                      "userUpdated": null,
+                      "userDeleted": null,
+                      "userCreated": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      }
+                    },
+                    {
+                      "id": 3,
+                      "plate": "D-2345UYD",
+                      "manufacture": "Toyota",
+                      "model": "G",
+                      "image": "https://res.cloudinary.com/daqvkypln/image/upload/v1717577956/cars/ktkpgaflnnwpawmeukrc.png",
+                      "image_public_id": "cars/ktkpgaflnnwpawmeukrc",
+                      "rent_per_day": 150000,
+                      "capacity": 8,
+                      "description": "Rear passenger map pockets. Electrochromic rearview mirror. Dual chrome exhaust tips. Locking glove box.",
+                      "available_at": "2023-12-31T17:00:00.000Z",
+                      "transmission": "manual",
+                      "available": true,
+                      "type": "MVP",
+                      "year": 2019,
+                      "options": "\"Keyless Entry\",\n      \"Power Windows\",\n      \"MP3 (Single Disc)\",\n      \"CD (Multi Disc)\",\n      \"Navigation\"",
+                      "specs": "      \"Rear passenger map pockets\",\n      \"Electrochromic rearview mirror\",\n      \"Dual chrome exhaust tips\",",
+                      "created_by": "69faf45f-01c9-431b-9916-31c4a4fb05f9",
+                      "updated_by": null,
+                      "deleted_by": null,
+                      "created_at": "2024-06-05T08:59:16.037Z",
+                      "updated_at": "2024-06-05T08:59:16.037Z",
+                      "deleted_at": null,
+                      "userUpdated": null,
+                      "userDeleted": null,
+                      "userCreated": {
+                        "name": "Admin 1",
+                        "email": "admin1@gmail.com"
+                      }
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1520,13 +1520,7 @@
 							]
 						},
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/cars/:id",
 							"protocol": "http",
@@ -2437,13 +2431,7 @@
 							]
 						},
 						"method": "DELETE",
-						"header": [
-							{
-								"key": "",
-								"value": "",
-								"type": "text"
-							}
-						],
+						"header": [],
 						"url": {
 							"raw": "http://localhost:3000/api/v1/cars/:id",
 							"protocol": "http",

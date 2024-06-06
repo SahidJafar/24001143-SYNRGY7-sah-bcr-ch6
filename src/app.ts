@@ -3,6 +3,8 @@ import { config } from "dotenv";
 import router from "./routes";
 import { Model } from "objection";
 import knexInstance from "./config/db";
+import swaggerUi from "swagger-ui-express";
+import swagggerDocument from "../swagger.json";
 
 config()
 
@@ -15,7 +17,9 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 app.use(express.static('public'));
+app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swagggerDocument));
 app.use(router);
+
 
 app.listen(PORT, () => {
     console.log(`Express is listening at http://localhost:${PORT}`);

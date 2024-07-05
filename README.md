@@ -10,9 +10,16 @@ http://localhost:(PORT)/api-docs/
 ![erd_challange_6](https://github.com/SahidJafar/24001143-SYNRGY7-sah-bcr-ch6/assets/58686490/00c90422-712a-4f03-b333-aa1ddfa0db99)
 
 ## How to use?
-
+1.Install NPM
 ```
 $ npm install
+```
+2.Copy .env.example to .env then fill in the .env
+```
+$ cp .env.example .env
+```
+3.RUN!
+```
 $ npm run dev # run development!
 ```
 
